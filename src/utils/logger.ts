@@ -1,3 +1,3 @@
 import debug from 'debug';
 
-export const logger = debug.extend('app');
+export const logger = debug('app');

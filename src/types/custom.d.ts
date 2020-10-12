@@ -1,9 +1,14 @@
-// export {};
+import { User } from '../entities/User.entity';
+import { Product } from '../entities/Product.entity';
 
-// declare global {
-declare namespace Express {
-	interface Session {
-		userId: string;
-	}
+declare global {
+  namespace Express {
+    export interface Session {
+      userId: string;
+    }
+
+    export interface Request {
+      product?: Product;
+    }
+  }
 }
-// }

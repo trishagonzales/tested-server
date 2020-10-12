@@ -1,37 +1,38 @@
 {
-	"compilerOptions": {
-		"target": "ES5",
-		"lib": ["ES2015", "ESNext", "ESNext.AsyncIterable"],
-		"module": "CommonJS",
-		"moduleResolution": "Node",
-		"sourceMap": true,
-		"outDir": "./build",
-		"pretty": true,
-		"baseUrl": ".",
-		"paths": {
-			"@entities/*": ["src/entities/*"],
-			"@modules/*": ["src/modules/*"],
-			"@startup/*": ["src/startup/*"],
-			"@test-utils/*": ["src/test-utils/*"],
-			"@types/*": ["src/types/*"],
-			"@utils/*": ["src/utils/*"]
-		},
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["ESNext", "ESNext.AsyncIterable"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "outDir": "./build",
+    "pretty": true,
+    // "baseUrl": ".",
+    // "paths": {
+    //   "*": ["src/*"],
+    //   "@entities/*": ["src/entities/*"],
+    //   "@modules/*": ["src/modules/*"],
+    //   "@startup/*": ["src/startup/*"],
+    //   "@test-utils/*": ["src/test-utils/*"],
+    //   "@types/*": ["src/types/*"],
+    //   "@utils/*": ["src/utils/*"]
+    // },
 
-		"removeComments": true,
-		"alwaysStrict": true,
-		"noImplicitAny": true,
-		"noImplicitThis": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true,
-		"strictNullChecks": true,
-		"strictFunctionTypes": true,
-		// "strictPropertyInitialization": true,
-		"esModuleInterop": true,
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true
-	},
+    "removeComments": true,
+    // "alwaysStrict": true,
+    // "noImplicitAny": true,
+    "noImplicitThis": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    // "strictPropertyInitialization": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
 
-	"exclude": ["node_modules", "build", "/**/*.{test,spec}.{ts,js}"],
-	"include": ["./src/**/*"]
+  "exclude": ["node_modules", "build", "/**/*.{test,spec}.{ts,js}"],
+  "include": ["./src/**/*.ts"]
 }
