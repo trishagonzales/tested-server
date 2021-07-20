@@ -24,7 +24,6 @@ export let server: Server | undefined;
         app,
         cors: {
           origin: config.FRONTEND_URL,
-          // origin: 'http://localhost:5000',
           credentials: true,
         },
       });

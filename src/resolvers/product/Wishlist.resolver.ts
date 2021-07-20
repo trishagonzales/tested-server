@@ -30,7 +30,7 @@ export class WishlistResolver {
 
   @Mutation(() => Product)
   @UseMiddleware(AuthWithWishlist)
-  async removeWishlistItem(
+  async deleteWishlistItem(
     @Arg('productID') id: string,
     @Ctx() { user }: ContextWithUser
   ): Promise<Product> {

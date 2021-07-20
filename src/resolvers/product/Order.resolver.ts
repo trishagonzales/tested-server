@@ -45,7 +45,7 @@ export class OrderResolver {
 
   @Mutation(() => Boolean)
   @UseMiddleware(Auth)
-  async removeOrder(@Arg('id') id: string): Promise<boolean> {
+  async deleteOrder(@Arg('id') id: string): Promise<boolean> {
     const order = await getOrderById(id);
     await Order.remove(order);
     return true;

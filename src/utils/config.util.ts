@@ -11,6 +11,8 @@ export const config = {
   BACKEND_URL: process.env.BACKEND_URL,
 
   SESSION_SECRET: process.env.SESSION_SECRET,
+  JWT_KEY: process.env.JWT_KEY,
+  SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
 };
 
 try {

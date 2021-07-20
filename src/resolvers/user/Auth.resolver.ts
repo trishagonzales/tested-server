@@ -30,7 +30,7 @@ export class AuthResolver {
     );
     if (userByEmail) return exec(userByEmail);
 
-    throw new Error('Invalid username or password');
+    throw new AuthenticationError('Invalid username or password');
   }
 
   @Mutation(() => Boolean)

@@ -15,14 +15,14 @@ import { CartItem } from './CartItem.entity';
 import { Order } from './Order.entity';
 
 export enum Role {
-  ADMIN = 'admin',
-  USER = 'user',
+  ADMIN = 'ADMIN',
+  USER = 'USER',
 }
 
 export enum Gender {
-  MALE = 'male',
-  FEMALE = 'female',
-  OTHER = 'other',
+  MALE = 'MALE',
+  FEMALE = 'FEMALE',
+  OTHER = 'OTHER',
 }
 
 @ObjectType()
@@ -58,7 +58,7 @@ export class User extends BaseEntity {
 
   @Field()
   @Column({ default: false })
-  emailConfirmed: boolean;
+  isEmailConfirmed: boolean;
 
   @Column()
   password: string;

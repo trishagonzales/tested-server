@@ -27,6 +27,7 @@ export async function expressLoader() {
         cookie: {
           httpOnly: true,
           secure: config.NODE_ENV === 'production',
+          sameSite: 'strict',
           maxAge: 1000 * 60 * 60 * 24 * 100, // 100 days
         },
       })

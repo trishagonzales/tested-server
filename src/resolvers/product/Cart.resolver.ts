@@ -39,7 +39,7 @@ export class CartResolver {
 
   @Mutation(() => CartItem, { nullable: true })
   @UseMiddleware(AuthWithCart)
-  async removeCartItem(
+  async deleteCartItem(
     @Arg('productID') productID: string,
     @Ctx() { user }: ContextWithUser
   ): Promise<CartItem | undefined> {

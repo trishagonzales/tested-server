@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { Resolver, Mutation, Arg, UseMiddleware } from 'type-graphql';
 import { GraphQLUpload, FileUpload } from 'graphql-upload';
 
@@ -30,7 +31,7 @@ export class ProductSettingsResolver {
 
   @Mutation(() => Boolean)
   @UseMiddleware(Auth, IsAdmin)
-  async removeProduct(@Arg('id') id: string): Promise<boolean> {
+  async deleteProduct(@Arg('id') id: string): Promise<boolean> {
     const product = await getProductById(id);
     await Promise.all(product.images.map(i => removeFile(i)));
     await Product.remove(product);
@@ -47,8 +48,7 @@ export class ProductSettingsResolver {
     const filenames = await Promise.all(files.map(async file => fileUpload(await file)));
 
     const product = await getProductById(id);
-    if (product.images) await Promise.all(product.images.map(i => removeFile(i)));
-    product.images = filenames;
+    product.images = [...product.images, ...filenames];
     await product.save();
 
     return id;
@@ -56,13 +56,13 @@ export class ProductSettingsResolver {
 
   @Mutation(() => Boolean)
   @UseMiddleware(Auth, IsAdmin)
-  async removeProductImage(
+  async deleteProductImages(
     @Arg('id') id: string,
-    @Arg('filename') filename: string
+    @Arg('filenames', () => [String]) filenames: string[]
   ): Promise<boolean> {
-    await removeFile(filename);
+    await Promise.all(filenames.map(f => removeFile(f)));
     const product = await getProductById(id);
-    product.images = product.images.filter(i => i !== filename);
+    product.images = _.difference(product.images, filenames);
 
     return true;
   }

@@ -13,3 +13,6 @@ build
 
 # User uploaded images
 uploads
+
+# Database
+data
