@@ -28,9 +28,10 @@
     }
   },
   "dependencies": {
-    "apollo-server-express": "^2.16.0",
+    "apollo-server-express": "^3.3.0",
     "bcryptjs": "^2.4.3",
     "class-validator": "^0.12.2",
+    "cloudinary": "^1.26.3",
     "connect-redis": "^5.0.0",
     "dotenv-cli": "^3.2.0",
     "express": "^4.17.1",
@@ -40,11 +41,11 @@
     "ioredis": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
-    "mysql": "^2.18.1",
     "nodemailer": "^6.4.10",
     "nodemailer-sendgrid": "^1.0.3",
+    "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
-    "sqlite3": "^5.0.2",
+    "streamifier": "^0.1.1",
     "type-graphql": "^1.0.0-rc.3",
     "typeorm": "^0.2.25",
     "uuid": "^8.3.2"
@@ -66,6 +67,7 @@
     "@types/node": "^14.0.26",
     "@types/nodemailer": "^6.4.0",
     "@types/nodemailer-sendgrid": "^1.0.0",
+    "@types/streamifier": "^0.1.0",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
     "@typescript-eslint/parser": "^3.7.0",
